@@ -1,0 +1,209 @@
+#skrip {
+    color : #444;
+    font-size : 14pt;
+}
+.sk-syntax {
+    opacity         : 0.5;
+    font-weight     : normal;
+    border          : 0!important;
+    text-align: right!important;
+}
+
+.sk-meta-judul {
+    text-align      : center;
+    padding         : 1rem 0 1.25rem;
+    margin          : 0 10rem;
+    font-weight     : bold;
+    font-size       : 26pt;
+}
+
+.sk-meta-val {
+    text-align      : center;
+    padding         : 0.25rem 0;
+    font-weight     : 500;
+}
+
+.sk-bab {
+    padding         : 1.5rem 0 2rem;
+    text-align      : center;
+    font-weight     : 600;
+    font-size       : 18pt;
+}
+
+.bab-i::after {
+    white-space     : pre;
+    content         : "BAB I\APENDAHULUAN";
+}
+
+.bab-ii::after {
+    white-space     : pre;
+    content         : "BAB II\AKAJIAN TEORI";
+}
+
+.bab-iii::after {
+    white-space     : pre;
+    content         : "BAB III\AMETODOLOGI PENELITIAN";
+}
+
+.bab-iv::after {
+    white-space     : pre;
+    content         : "BAB IV\AIMPLEMENTASI DAN PEMBAHASAN";
+}
+
+.bab-v::after {
+    white-space     : pre;
+    content         : "BAB V\AKESIMPULAN";
+}
+
+.sk-sub {
+    font-weight     : bold;
+    font-size       : 16pt;
+    margin-bottom   : 0.5rem;
+}
+
+.sk-parag {
+    text-indent     : 3rem;
+    text-align      : justify;
+    line-height     : 2rem;
+}
+
+.sk-num-reset {
+    display: inline-block;
+    counter-reset: numlist;
+}
+
+.sk-num-list {
+    text-align: justify;
+    margin-left: 3rem;
+    text-indent: -1.4rem;
+    line-height: 2rem;
+}
+
+.sk-num-list::before {
+    display : inline-block;
+    min-width : 1rem;
+    max-width : 1rem;
+    content : counter(numlist) " . ";
+    counter-increment : numlist;
+}
+
+.sk-alpha-reset {
+    display: inline-block;
+    counter-reset: alphalist;
+}
+
+.sk-alpha-list {
+    text-align: justify;
+    margin-left: 3rem;
+    text-indent: -1.4rem;
+    line-height: 2rem;
+}
+
+.sk-alpha-list::before {
+    display : inline-block;
+    min-width : 1rem;
+    max-width : 1rem;
+    content : counters(alphalist,"loweralpha") " ) ";
+    counter-increment : alphalist;
+}
+
+.sk-dash-list {
+    text-align: justify;
+    margin-left: 3rem;
+    text-indent: -1.4rem;
+    line-height: 2rem;
+}
+
+.sk-alpha-list::marker {
+    display : inline-block;
+    min-width : 1rem;
+    max-width : 1rem;
+}
+
+.sk-image {
+    display: block;
+    margin: 2rem auto 2rem;
+}
+
+.sk-image-dsc {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.sk-table td {
+    border: 1px solid black;
+}
+
+.sk-table thead tr td {
+    text-align: center;
+    padding: 0.65rem 0.85rem;
+}
+
+.sk-table tbody tr td {
+    padding: 0.25rem 0.5rem;
+}
+
+.sk-table {
+    margin: 0 auto 2rem;
+}
+
+.sk-table-dsc {
+    text-align: center;
+    margin: 2rem 0 1rem;
+}
+
+.sk-size-20 {
+    width: 20%;
+}
+
+.sk-size-40 {
+    width: 40%;
+}
+
+.sk-size-50 {
+    width: 50%;
+}
+
+.sk-size-60 {
+    width: 60%;
+}
+
+.sk-size-80 {
+    width: 80%;
+}
+
+.sk-size-100 {
+    width: 100%;
+}
+
+.sk-bold {
+    font-weight     : bold;
+}
+
+.sk-emp {
+    font-style      : italic;
+}
+
+.sk-und {
+    text-decoration : underline;
+}
+
+.sk-parag + .sk-parag {
+    margin-top: -0.75rem;
+}
+
+.sk-parag + .sk-sub {
+    margin-top: 2rem;
+}
+
+.sk-parag + .sk-table-dsc {
+    margin-top: 0;
+}
+
+.sk-parag + .sk-num-reset {
+    margin-top: -4rem;
+}
+
+.sk-num-reset + .sk-num-list {
+    margin-top: -2.5rem;
+}

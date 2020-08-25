@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pendahuluan</title>
+    <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+    <style>
+
+        @media screen {
+            html {
+                display: block;
+                overflow-x: hidden;
+                margin-left: -80px;
+                margin-top: -30px;
+            }
+            #cover {
+                counter-reset: ct-pendahuluan 1;
+            }
+            #pg-lembar_persetujuan,
+            #pg-lembar_pengesahan,
+            #pg-lembar_pernyataan,
+            #pg-lembar_persembahan,
+            #pg-lembar_abstrak,
+            #pg-lembar_abstract,
+            #pg-kata_pengantar,
+            #pg-daftar_isi {
+                counter-increment: ct-pendahuluan;
+            }
+
+            /*----------DAFTAR ISI PENDAHULUAN SETTING----------*/
+            .reset-head-count {
+                counter-reset: ct-di-pendahuluan 0;
+            }
+            .head-count {
+                counter-increment: ct-di-pendahuluan;
+            }
+
+        }
+
+        @media print {
+            body {
+                font-family: 'Times New Roman', serif;
+                font-size: 12pt;
+                line-height: 1.5em;
+            }
+
+            /*----------COVER SETTING----------*/
+            #cover {
+                page: p-cover;
+                page-break-after: always;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 232mm;
+            }
+            #cov-head {
+                font-size: 14pt;
+                font-weight: bold;
+                text-transform: uppercase;
+                line-height: 1.5em;
+                text-align: center;
+                flex: 1;
+            }
+            #cov-head + div {
+                line-height: 1.5em;
+                text-transform: capitalize;
+                text-align: center;
+                flex: auto;
+            }
+            #cov-head + div + div {
+                text-align: center;
+                flex: auto;
+            }
+            #cov-head + div + div > img {
+                width: 12em;
+            }
+            #cov-head + div + div + div {
+                text-align: center;
+                text-transform: capitalize;
+                line-height: 1.7em;
+                flex: auto;
+            }
+            #cov-head + div + div + div > span {
+                font-weight: bold;
+            }
+            #cov-footer {
+                font-weight: bold;
+                font-size: 14pt;
+                line-height: 1.7em;
+                text-align: center;
+                text-transform: uppercase;
+                flex: 1;
+            }
+
+            /*----------LEMBAR PERSETUJUAN, PENGESAHAN, PERNYATAAN SETTING----------*/
+            #pg-lembar_persetujuan , #pg-lembar_pengesahan , #pg-lembar_pernyataan {
+                page: p-pendahuluan;
+                text-align: center;
+                width: 100%;
+                height: 232mm;
+                page-break-after: always;
+            }
+            #pg-lembar_persetujuan > img , #pg-lembar_pengesahan > img , #pg-lembar_pernyataan > img{
+                width: 90%;
+                position: relative;
+                top: 13%;
+            }
+
+            /*----------ABSTRAK, ABSTRACT SETTING----------*/
+            #pg-lembar_abstrak , #pg-lembar_abstract {
+                page: p-pendahuluan;
+                width: 100%;
+                height: 232mm;
+                page-break-after: always;
+            }
+
+            /*----------LEMBAR PERSEMBAHAN, KATA PENGANTAR SETTING----------*/
+            #pg-lembar_persembahan , #pg-kata_pengantar {
+                page: p-pendahuluan;
+                width: 100%;
+                height: 232mm;
+                page-break-after: always;
+            }
+            .pendahuluan-sub-title {
+                font-weight: bold;
+                font-size: 14pt;
+                text-transform: uppercase;
+                line-height: 1.7em;
+                text-align: center;
+                margin-bottom: 0.5em;
+            }
+            .pendahuluan-sub-title > img {
+                display: block;
+                width: 220pt;
+                margin: 0.5em auto 0;
+            }
+            #pg-lembar_persembahan > p , #pg-kata_pengantar-content > p {
+                text-align: justify;
+                line-height: 1.7em;
+                font-size: 12pt;
+            }
+            #pg-lembar_persembahan > P + p , #pg-kata_pengantar-content > P + p{
+                margin-top: -1em;
+            }
+            #pg-kata_pengantar-judul {
+                text-align: center!important;
+                text-transform: uppercase;
+                font-size: 14pt;
+                line-height: 1.7em;
+                font-weight: bold;
+                padding-top: 5px;
+            }
+            #pg-kata_pengantar {
+                display: flex;
+                flex-direction: column;
+            }
+            #pg-kata_pengantar-content , #pg-kata_pengantar-info{
+                flex: 1;
+            }
+            #pg-kata_pengantar > div {
+                flex: auto;
+            }
+            #pg-kata_pengantar-info {
+                text-align: right;
+            }
+            #pg-kata_pengantar-info > br + span {
+                font-weight: bold;
+            }
+
+            /*----------DAFTAR ISI SETTING----------*/
+            #pg-daftar_isi {
+                page: p-pendahuluan;
+                width: 100%;
+            }
+            #pg-daftar_isi > ul {
+                margin: 0;
+                list-style-type: none;
+            }
+            #pg-daftar_isi > ul > li {
+                color: inherit;
+                text-transform: capitalize;
+                font-weight: bold;
+                overflow-x: hidden;
+            }
+            #pg-daftar_isi > ul > li > span {
+                background-color: white;
+            }
+            #pg-daftar_isi > ul > li::before {
+                font-weight: normal;
+                float: left;
+                width: 0;
+                white-space: nowrap;
+                letter-spacing: -0.5pt;
+                content:
+                    '...... ...... ...... ...... ...... ...... '
+                    '...... ...... ...... ...... ...... ...... '
+                    '...... ...... ...... ...... ...... ...... '
+                    '...... ...... ...... ...... ...... ';
+            }
+            #pg-daftar_isi > ul > li::after {
+                background-color: white;
+                content: " ";
+            }
+            .di-b {
+                text-transform: uppercase;
+            }
+            #pg-daftar_isi > ul > li > a {
+                float: right;
+                text-transform: lowercase;
+                color: inherit;
+                text-decoration: none;
+            }
+            #pg-daftar_isi > ul > li > a::after {
+                background-color: white;
+                /*noinspection CssInvalidFunction*/
+                content: "\00a0 " target-counter(attr(href),ct-di-pendahuluan, lower-roman);
+            }
+
+        }
+
+        /*----------PAGE SETTING----------*/
+
+        @page {
+            size: A4;
+            margin: 3cm 3cm 3cm 4cm;
+        }
+
+        @page {
+
+        }
+
+        @page p-pendahuluan {
+            @bottom-center {
+                counter-reset: page;
+                /*noinspection CssInvalidFunction*/
+                /*content: counter(page, lower-roman) ;*/
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div id="cover" class="reset-head-count">
+    <div id="cov-head">
+        pengembangan masalah tanpa solusi dengan metode rebahan secara otomatis<br><br>
+        tugas akhir<br><br>
+    </div>
+    <div>
+        diajukan untuk memenuhi<br>
+        persyaratan guna meraih gelar sarjana strata i<br>
+        program studi informatika universitas muhammadiyah malang
+    </div>
+    <div>
+        <img src="doc-img/title-logo.png" alt="logo">
+    </div>
+    <div>
+        oleh :<br>
+        <span>muhammad robby fathuda</span><br>
+        <span>201410370311235</span><br><br>
+        <span>rekayasa perangkat lunak</span><br>
+    </div>
+    <div id="cov-footer">
+        jurusan informatika<br>
+        fakultas teknik<br>
+        universitas muhammadiyah malang<br>
+        2020
+    </div>
+</div>
+<div id="pg-lembar_persetujuan" class="head-count">
+    <img src="doc-img/lembar%20persetujuan.JPG" alt="">
+</div>
+<div id="pg-lembar_pengesahan" class="head-count">
+    <img src="doc-img/lembar%20pengesahan.JPG" alt="">
+</div>
+<div id="pg-lembar_pernyataan" class="head-count">
+    <img src="doc-img/lembar%20pernyataan.JPG" alt="">
+</div>
+<div id="pg-lembar_abstrak" class="head-count">
+    <div class="pendahuluan-sub-title">
+        abstrak
+    </div>
+</div>
+<div id="pg-lembar_abstract" class="head-count">
+    <div class="pendahuluan-sub-title">
+        abstract
+    </div>
+</div>
+<div id="pg-lembar_persembahan" class="head-count">
+    <div class="pendahuluan-sub-title">
+        lembar persembahan
+    </div>
+    <p>
+        Terima kasih kepada Allah SWT dan Nabi Besar Muhammad SAW
+    </p>
+    <p>
+        Dengan puji syukur Alhamdulillah, saya persembahkan tugas akhir ini sehingga bisa untuk:
+    </p>
+</div>
+<div id="pg-kata_pengantar" class="head-count">
+    <div id="pg-kata_pengantar-content">
+        <div class="pendahuluan-sub-title">
+            kata pengantar
+            <img src="doc-img/basmallah.jpg" alt="">
+        </div>
+        <p>
+            Penulis memanjatkan Segala Puji Bagi Allah SWT Tuhan semesta alam dan Shalawat serta salam selalu
+            tercurahkan kepada Nabi Muhammad SAW, Penulis berhasil menyelesaikan Tugas Akhir dengan judul:
+        </p>
+        <p id="pg-kata_pengantar-judul">
+            pengembangan masalah tanpa solusi dengan metode rebahan secara otomatis
+        </p>
+        <p>
+            Melalui kesempatan yang sangat berbahagia ini penulis menyampaikan ucapan terima kasih yang sebesar-besarnya
+            kepada semua pihak yang telah membantu dan terlibat dalam dalam penyelesaian tugas akhir ini.
+        </p>
+        <p>
+            Peneliti menyadari bahwa dalam penulisan Tugas Akhir ini masih banyak kekurangan dan keterbatasan. Oleh
+            karena itu penulis mengharapkan saran yang  membangun agar tulisan ini bermanfaat bagi perkembangan ilmu
+            pengetahuan kedepannya.
+        </p>
+    </div>
+    <div>
+
+    </div>
+    <p id="pg-kata_pengantar-info">
+        <span>Malang, 31 Desember 2019</span><br><br><br><br><br>
+        <span>Muhammad Robby Fathuda</span>
+    </p>
+</div>
+<div id="pg-daftar_isi" class="head-count">
+    <div class="pendahuluan-sub-title">
+        daftar isi
+    </div>
+    <ul>
+        <li><span class="di-b">lembar persetujuan</span><a href="#pg-lembar_persetujuan"></a></li>
+        <li><span class="di-b">lembar pengesahan</span><a href="#pg-lembar_pengesahan"></a></li>
+        <li><span class="di-b">lembar pernyataan</span><a href="#pg-lembar_pernyataan"></a></li>
+        <li><span class="di-b">abstrak</span><a href="#pg-lembar_abstrak"></a></li>
+        <li><span class="di-b">abstract</span><a href="#pg-lembar_abstract"></a></li>
+        <li><span class="di-b">lembar persembahan</span><a href="#pg-lembar_persembahan"></a></li>
+        <li><span class="di-b">kata pengantar</span><a href="#pg-kata_pengantar"></a></li>
+        <li><span class="di-b">daftar isi</span><a href="#pg-daftar_isi"></a></li>
+    </ul>
+</div>
+</body>
+</html>

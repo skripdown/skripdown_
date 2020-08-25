@@ -1,0 +1,66 @@
+$(document).ready(()=>{
+
+    const form              = $('#form').get(0);
+    const input_text        = $('#text-val').get(0);
+    const input_parse       = $('#parse-val').get(0);
+    const input_department  = $('#department-val').get(0);
+    const input_university  = $('#university-val').get(0);
+    const input_faculty     = $('#faculty-val').get(0);
+    const skrip_input       = $('#skrip').get(0);
+
+    const btn_font_up       = $('#btn-font-up').get(0);
+    const btn_font_down     = $('#btn-font-down').get(0);
+
+    const save_btn = $('#save').get(0);
+
+    let university,faculty,department;
+    let temp_text;
+    $(save_btn).click(()=>{
+        temp_text = $(skrip_input).html();
+        let temp;
+        if ((temp = /^ *@university *: *([\w\S ]+) *$/m.exec(temp_text)) != null)
+            university = temp[1];
+        else
+            university = 'Universitas Muhammadiyah Malang';
+        if ((temp = /^ *@faculty *: *([\w\S ]+) *$/m.exec(temp_text)) != null)
+            faculty = temp[1];
+        else
+            faculty = 'Teknik';
+        if ((temp = /^ *@department *: *([\w\S ]+) *$/m.exec(temp_text)) != null)
+            department = temp[1];
+        else
+            department = 'Informatika';
+        $(input_text).val(temp_text);
+        $(input_department).val(department);
+        $(input_faculty).val(faculty);
+        $(input_university).val(university);
+        $(form).submit();
+    });
+
+    $(btn_font_up).click(()=>{
+        let size = parseInt($(skrip_input).data('font-editor'));
+        if (size < 28) {
+            size += 4;
+            $(skrip_input).css('font-size',size+'pt');
+            $(skrip_input).data('font-editor',size+'');
+        }
+    });
+
+    $(btn_font_down).click(()=>{
+        let size = parseInt($(skrip_input).data('font-editor'));
+        if (size > 12) {
+            size -= 4;
+            $(skrip_input).css('font-size',size+'pt');
+            $(skrip_input).data('font-editor',size+'');
+        }
+    });
+
+    $(skrip_input).keyup(e=>{
+        const code = e.keyCode;
+        if (code !== 37 && code !== 38 && code !== 39 && code !== 40) {
+            $(input_text).val(skrip_input.innerHTML);
+            $(input_parse).val(parse(skrip_input.innerText+'\n'));
+        }
+    });
+
+});
