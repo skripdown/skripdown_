@@ -27,4 +27,4 @@ We will be very thankful for all the feedbacks.
 If you found some bugs inside **Skripdown**, feel free to report that.
 
 ## License
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**Skripdown** is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
