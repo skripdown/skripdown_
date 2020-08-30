@@ -558,6 +558,8 @@ class Skripdown {
             let operand;
             let section = 0;
 
+            let bab_ii  = false;
+
             if (pattern.length > 1) {
                 while (pattern.length > 0) {
                     operand = pattern.shift();
@@ -565,6 +567,7 @@ class Skripdown {
                         section = 1;
                         const on_bab = reg_bab_value.shift();
                         if (on_bab === 1) {
+                            bab_ii = false;
                             toc_content = toc_content
                                 + '<span class="set-dfi-bab-i"></span><span class="reset-dfi-sub"></span>'
                                 + '<li><span class="di-b">bab i</span><a href="#bab-i" class="con-idx"></a></li>';
@@ -574,6 +577,7 @@ class Skripdown {
                                 + '<span class="set-dfi-bab-i"></span><span class="reset-df-tabel"></span>';
                         }
                         else if (on_bab === 2) {
+                            bab_ii = true;
                             toc_content = toc_content
                                 + '<span class="set-dfi-bab-ii"></span><span class="reset-dfi-sub"></span>'
                                 + '<li><span class="di-b">bab ii</span><a href="#bab-ii" class="con-idx"></a></li>';
@@ -583,6 +587,7 @@ class Skripdown {
                                 + '<span class="set-dfi-bab-ii"></span><span class="reset-df-tabel"></span>';
                         }
                         else if (on_bab === 3) {
+                            bab_ii = false;
                             toc_content = toc_content
                                 + '<span class="set-dfi-bab-iii"></span><span class="reset-dfi-sub"></span>'
                                 + '<li><span class="di-b">bab iii</span><a href="#bab-iii" class="con-idx"></a></li>';
@@ -592,6 +597,7 @@ class Skripdown {
                                 + '<span class="set-dfi-bab-iii"></span><span class="reset-df-tabel"></span>';
                         }
                         else if (on_bab === 4) {
+                            bab_ii = false;
                             toc_content = toc_content
                                 + '<span class="set-dfi-bab-iv"></span><span class="reset-dfi-sub"></span>'
                                 + '<li><span class="di-b">bab iv</span><a href="#bab-iv" class="con-idx"></a></li>';
@@ -601,6 +607,7 @@ class Skripdown {
                                 + '<span class="set-dfi-bab-iv"></span><span class="reset-df-tabel"></span>';
                         }
                         else {
+                            bab_ii = false;
                             toc_content = toc_content
                                 + '<span class="set-dfi-bab-v"></span><span class="reset-dfi-sub"></span>'
                                 + '<li><span class="di-b">bab v</span><a href="#bab-v" class="con-idx"></a></li>';
@@ -931,7 +938,7 @@ class Skripdown {
         if (type === 3) return kata_pengantar_def(data);
     }
 
-    updated_foreign_word() {
+    update_foreign_word() {
         return [this.raw_foreign,this.raw_trans];
     }
 }
