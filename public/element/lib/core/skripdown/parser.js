@@ -486,7 +486,6 @@ class Skripdown {
             }
 
             pattern.push('0');
-            console.log(pattern);
 
             return [
                 pattern,
