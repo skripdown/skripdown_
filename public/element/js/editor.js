@@ -1,20 +1,35 @@
+let form;
+let input_text;
+let input_parse;
+let input_department;
+let input_university;
+let input_faculty;
+let skrip_input;
+let btn_font_up;
+let btn_font_down;
+
+let save_btn;
+let skrip_d;
+
+let university,faculty,department;
+let temp_text;
+
 $(document).ready(()=>{
 
-    const form              = $('#form').get(0);
-    const input_text        = $('#text-val').get(0);
-    const input_parse       = $('#parse-val').get(0);
-    const input_department  = $('#department-val').get(0);
-    const input_university  = $('#university-val').get(0);
-    const input_faculty     = $('#faculty-val').get(0);
-    const skrip_input       = $('#skrip').get(0);
+    form              = $('#form').get(0);
+    input_text        = $('#text-val').get(0);
+    input_parse       = $('#parse-val').get(0);
+    input_department  = $('#department-val').get(0);
+    input_university  = $('#university-val').get(0);
+    input_faculty     = $('#faculty-val').get(0);
+    skrip_input       = $('#skrip').get(0);
 
-    const btn_font_up       = $('#btn-font-up').get(0);
-    const btn_font_down     = $('#btn-font-down').get(0);
+    btn_font_up       = $('#btn-font-up').get(0);
+    btn_font_down     = $('#btn-font-down').get(0);
 
-    const save_btn = $('#save').get(0);
+    save_btn = $('#save').get(0);
+    skrip_d  = new Skripdown('','');
 
-    let university,faculty,department;
-    let temp_text;
     $(save_btn).click(()=>{
         temp_text = $(skrip_input).html();
         let temp;
@@ -64,3 +79,5 @@ $(document).ready(()=>{
     });
 
 });
+
+
