@@ -6,6 +6,7 @@ class Skripdown {
         this.id         = '';
         this.faculty    = '';
         this.department = '';
+        this.university = '';
         this.abstract   = '';
         this.abs_key    = '';
         this.set_foreign_word(for_words, trans_words);
@@ -224,6 +225,7 @@ class Skripdown {
                     }
                     else if ((result = /^[ ]*@university[ ]*:[ ]*([A-z]['A-z0-9 ]+)[ ]*$/m.exec(raw[i])) != null) {
                         $university_value = result[1];
+                        this.university = result[1];
                     }
                     else if ((result = /^[ ]*@faculty[ ]*:[ ]*([A-z]['A-z0-9 ]+)[ ]*$/m.exec(raw[i])) != null) {
                         $faculty_value = result[1];
@@ -985,6 +987,10 @@ class Skripdown {
 
     getDepartment() {
         return this.department;
+    }
+
+    getUniversity() {
+        return this.university;
     }
 
     getAbstract() {
