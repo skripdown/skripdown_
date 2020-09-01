@@ -245,6 +245,9 @@ class Skripdown {
                     else if ((result = /^[ ]*@watermark[ ]*:[ ]*(on|off)[ ]*$/m.exec(raw[i])) != null) {
                         $watermark_value = result[1];
                     }
+                    else if ((result = /^[ ]*@keyword[ ]*:[ ]*(on|off)[ ]*$/m.exec(raw[i])) != null) {
+                        $abstract_key_value = result[1];
+                    }
                     else if ((result = /^[ \u00A0]*@persetujuan[ \u00A0]*:[ \u00A0]*([\w\S]+)[ \u00A0]*$/m.exec(raw[i])) != null) {
                         $lem_persetujuan_value = result[1];
                     }
