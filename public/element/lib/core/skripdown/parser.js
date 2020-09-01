@@ -934,6 +934,10 @@ class Skripdown {
     }
 
     set_foreign_word(for_words,trans_words) {
+        if (for_words == null || for_words === '') {
+            for_words = 'online|offline';
+            trans_words = 'daring|luring';
+        }
         const foreign_word      = for_words.split('|');
         const translate_word    = trans_words.split(',');
         this.raw_foreign        = for_words;

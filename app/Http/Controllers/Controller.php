@@ -80,10 +80,13 @@ class Controller extends BaseController
     }
 
     public function skripdownForeignWords(Request $request) {
+
         $skripdown = Skripdown::find(1);
-        $skripdown->foreign_words = $request->foreign_word;
-        $skripdown->translate_words = $request->translate_word;
-        $skripdown->save();
+        if ($request->foreign_word !== '') {
+            $skripdown->foreign_words = $request->foreign_word;
+            $skripdown->translate_words = $request->translate_word;
+            $skripdown->save();
+        }
 
         return response()->json(
             array(

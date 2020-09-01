@@ -89,14 +89,13 @@ $(document).ready(()=>{
 
 window.setInterval(()=>{
     const temp = skrip_d.update_foreign_word();
-    if (temp[0] !== '') {
         $.ajax({
             type    : 'POST',
             url     : ''+skripd_link+'',
             data    : {_token:skripd_token,foreign_word:temp[0],translate_word:temp[1]},
             success : data=>{
+                console.log(data.foreign_word);
                 skrip_d.set_foreign_word(data.foreign_word,data.translate_word);
             }
         });
-    }
 },1000);
