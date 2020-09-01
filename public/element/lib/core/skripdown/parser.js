@@ -975,6 +975,10 @@ class Skripdown {
         return this.author;
     }
 
+    getId() {
+        return this.id;
+    }
+
     getFaculty() {
         return this.faculty;
     }
