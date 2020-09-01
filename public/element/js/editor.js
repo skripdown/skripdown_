@@ -10,6 +10,8 @@ let btn_font_down;
 
 let save_btn;
 let skrip_d;
+let skripd_link;
+let skripd_token;
 
 let university,faculty,department;
 let temp_text;
@@ -27,8 +29,10 @@ $(document).ready(()=>{
     btn_font_up       = $('#btn-font-up').get(0);
     btn_font_down     = $('#btn-font-down').get(0);
 
-    save_btn = $('#save').get(0);
-    skrip_d  = new Skripdown('','');
+    save_btn          = $('#save').get(0);
+    skrip_d           = new Skripdown('','');
+    skripd_link       = $('meta[name=skripd_f_words]').attr('content');
+    skripd_token      = $('meta[name=skripd_token]').attrs('content');
 
     $(save_btn).click(()=>{
         temp_text = $(skrip_input).html();
@@ -74,10 +78,20 @@ $(document).ready(()=>{
         const code = e.keyCode;
         if (code !== 37 && code !== 38 && code !== 39 && code !== 40) {
             $(input_text).val(skrip_input.innerHTML);
-            $(input_parse).val(parse(skrip_input.innerText+'\n'));
+            $(input_parse).val(skrip_d.parse(skrip_input.innerText+'\n'));
         }
     });
 
 });
 
+window.setInterval(()=>{
+    const temp = skrip_d.update_foreign_word();
+    $.ajax({
+        type    : 'POST',
+        url     : ''+skripd_link+'',
+        data    : {_token:skripd_token,foreign_word:temp[0],translate_word:temp[1]},
+        success : data=>{
 
+        }
+    });
+},1000);

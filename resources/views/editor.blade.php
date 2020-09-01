@@ -4,6 +4,8 @@
         <title>editor | {{env('APP_NAME')}}</title>
         <meta name="viewport" content="{{env('APP_VIEWPORT')}}">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="skripd_f_words" content="{{url('post_foreign_words')}}">
+        <meta name="skripd_token" content="{{csrf_token()}}">
         <link rel="icon" type="image/png" sizes="{{env('ICON_SIZE')}}" href="{{asset(env('ICON_PATH'))}}">
         <link rel="stylesheet" href="{{asset(env('LIB_PATH').'extra/c3/c3.min.css')}}">
         <link rel="stylesheet" href="{{asset(env('LIB_PATH').'core/chartist/dist/chartist.min.css')}}">
