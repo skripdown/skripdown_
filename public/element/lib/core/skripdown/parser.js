@@ -33,6 +33,8 @@ class Skripdown {
             $dosen_ii_name_value    = 'noname',
             $dosen_i_id_value       = 'noid',
             $dosen_ii_id_value      = 'noid',
+            $abstract_value         = '',
+            $abstract_key_value     = '',
             $lem_persetujuan_value  = '',
             $lem_pengesahan_value   = '',
             $lem_pernyataan_value   = '';
@@ -197,7 +199,6 @@ class Skripdown {
                 if ((result = synt_meta.exec(raw[i])) != null) {
                     if ((result = /^[ ]*@title[ ]*:[ ]*([\w,. )(</>]+)[ ]*$/m.exec(raw[i])) != null) {
                         $title_value = autocorrect(result[1]);
-                        this.title = $title_value;
                     }
                     else if ((result = /^[ ]*@citation[ ]*:[ ]*(APA)[ ]*$/m.exec(raw[i])) != null) {
                         $citation_value = result[1];
@@ -207,29 +208,24 @@ class Skripdown {
                     }
                     else if ((result = /^[ ]*@author[ ]*:[ ]*([A-z]['A-z0-9 ]+)[ ]*$/m.exec(raw[i])) != null) {
                         $author_value = result[1];
-                        this.author = $author_value;
                     }
                     else if ((result = /^[ ]*@id[ ]*:[ ]*([\w]+)[ ]*$/m.exec(raw[i])) != null) {
                         $id_value = result[1];
-                        this.id = $id_value;
                     }
                     else if ((result = /^[ ]*@email[ ]*:[ ]*([\w]+@[\w]+\.[A-z]+)[ ]*$/m.exec(raw[i])) != null) {
                         $email_value = result[1];
                     }
                     else if ((result = /^[ ]*@department[ ]*:[ ]*([A-z]['A-z0-9 ]+)[ ]*$/m.exec(raw[i])) != null) {
                         $department_value = result[1];
-                        this.department = $department_value;
                     }
                     else if ((result = /^[ ]*@majoring[ ]*:[ ]*([A-z]['A-z0-9 ]+)[ ]*$/m.exec(raw[i])) != null) {
                         $majoring_value = result[1];
                     }
                     else if ((result = /^[ ]*@university[ ]*:[ ]*([A-z]['A-z0-9 ]+)[ ]*$/m.exec(raw[i])) != null) {
                         $university_value = result[1];
-                        this.university = result[1];
                     }
                     else if ((result = /^[ ]*@faculty[ ]*:[ ]*([A-z]['A-z0-9 ]+)[ ]*$/m.exec(raw[i])) != null) {
                         $faculty_value = result[1];
-                        this.faculty = $faculty_value;
                     }
                     else if ((result = /^[ ]*@date[ ]*:[ ]*(\d{1,2})[,\- ](\d{1,2})[,\- ](\d\d\d\d)[ ]*$/m.exec(raw[i])) != null) {
                         $date_value = date(result[1],result[2],result[3]);
@@ -777,7 +773,7 @@ class Skripdown {
                     toc_opening += '<li><span class="di-b">lembar pernyataan</span><a href="#pg-lembar_pernyataan" class="pen-idx"></a></li>';
                 }
                 if (abs_id_content !== '') {
-                    this.abstract = abs_id_content;
+                    $abstract_value = abs_id_content;
                     abs_id_content = '<div id="pg-lembar_abstrak"><div class="pendahuluan-sub-title">abstrak</div>' + abs_id_content + '</div>';
                     doc += abs_id_content;
                     toc_opening += '<li><span class="di-b">abstrak</span><a href="#pg-lembar_abstrak" class="pen-idx"></a></li>';
@@ -945,7 +941,16 @@ class Skripdown {
             if (type === 3) return kata_pengantar_def(data);
         }
 
-        return construct(lex(inline(input)));
+        const result    = construct(lex(inline(input)));
+        this.title      = $title_value;
+        this.author     = $author_value;
+        this.id         = $id_value;
+        this.abstract   = $abstract_value;
+        this.abs_key    = $abstract_key_value;
+        this.university = $university_value;
+        this.faculty    = $faculty_value;
+        this.department = $department_value;
+        return result;
     }
 
     update_foreign_word() {
