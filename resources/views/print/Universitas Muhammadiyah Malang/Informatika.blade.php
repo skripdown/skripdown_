@@ -51,22 +51,22 @@
         counter-increment : sub-6;
     }
     .sub-1::before {
-        content : counter(bab) "." counter(sub-1) ". ";
+        content : counter(bab) "." counter(sub-1) " ";
     }
     .sub-2::before {
-        content : counter(bab) "." counter(sub-1) "." counter(sub-2) ". ";
+        content : counter(bab) "." counter(sub-1) "." counter(sub-2) " ";
     }
     .sub-3::before {
-        content : counter(bab) "." counter(sub-1) "." counter(sub-2) "." counter(sub-3) ". ";
+        content : counter(bab) "." counter(sub-1) "." counter(sub-2) "." counter(sub-3) " ";
     }
     .sub-4::before {
-        content : counter(bab) "." counter(sub-1) "." counter(sub-2) "." counter(sub-3) "." counter(sub-4) ". ";
+        content : counter(bab) "." counter(sub-1) "." counter(sub-2) "." counter(sub-3) "." counter(sub-4) " ";
     }
     .sub-5::before {
-        content : counter(bab) "." counter(sub-1) "." counter(sub-2) "." counter(sub-3) "." counter(sub-4) "." counter(sub-5) ". ";
+        content : counter(bab) "." counter(sub-1) "." counter(sub-2) "." counter(sub-3) "." counter(sub-4) "." counter(sub-5) " ";
     }
     .sub-6::before {
-        content : counter(bab) "." counter(sub-1) "." counter(sub-2) "." counter(sub-3) "." counter(sub-4) "." counter(sub-5) "." counter(sub-6) ". ";
+        content : counter(bab) "." counter(sub-1) "." counter(sub-2) "." counter(sub-3) "." counter(sub-4) "." counter(sub-5) "." counter(sub-6) " ";
     }
     #lampiran {
         counter-reset : lampiran-idx;

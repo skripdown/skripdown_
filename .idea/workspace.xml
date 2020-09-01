@@ -19,8 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e11be39e-f2d4-475c-839d-76f9fe8f6eac" name="Default Changelist" comment="editor.js bug fixed">
-      <change beforePath="$PROJECT_DIR$/resources/views/print/Universitas Muhammadiyah Malang/Informatika.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/print/Universitas Muhammadiyah Malang/Informatika.blade.php" afterDir="false" />
+    <list default="true" id="e11be39e-f2d4-475c-839d-76f9fe8f6eac" name="Default Changelist" comment="OUT template update">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +228,8 @@
       <workItem from="1598784624721" duration="120000" />
       <workItem from="1598830292607" duration="635000" />
       <workItem from="1598927552665" duration="7764000" />
-      <workItem from="1598942204119" duration="9051000" />
+      <workItem from="1598942204119" duration="9678000" />
+      <workItem from="1598966164559" duration="731000" />
     </task>
     <task id="LOCAL-00001" summary="Readme update">
       <created>1598358780919</created>
@@ -384,7 +385,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598963746709</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="OUT template update">
+      <created>1598964377151</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1598964377151</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,7 +423,8 @@
     <MESSAGE value="editor.js and skripdown integration laravel" />
     <MESSAGE value="editor.js updated" />
     <MESSAGE value="editor.js bug fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="editor.js bug fixed" />
+    <MESSAGE value="OUT template update" />
+    <option name="LAST_COMMIT_MESSAGE" value="OUT template update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1598173708153">
