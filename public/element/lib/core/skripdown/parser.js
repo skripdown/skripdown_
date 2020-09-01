@@ -29,9 +29,12 @@ class Skripdown {
             $lem_pengesahan_value   = '',
             $lem_pernyataan_value   = '';
 
+        const foreign_regex = this.foreign_regex;
+        const foreign_regex_inv = this.foreign_regex_inv;
+
         function autocorrect(text) {
             let temp;
-            while ((temp = this.foreign_regex.exec(text)) != null && this.foreign_regex_inv.exec(text) == null) {
+            while ((temp = foreign_regex.exec(text)) != null && foreign_regex_inv.exec(text) == null) {
                 text = text.replace(temp[1],'<em>'+temp[1]+'</em>');
             }
             return text;
@@ -871,62 +874,62 @@ class Skripdown {
             }
         }
 
+        function factory(type, data) {
+
+            function cover(data) {
+                return '<div id="cover" class="reset-head-count">'
+                    + '<div id="cov-head">'
+                    + data[3] + '<br><br>tugas akhir<br><br>'
+                    + '</div><div>diajukan untuk memenuhi<br>'
+                    + 'persyaratan guna meraih gelar sarjana strata i<br>'
+                    + 'program studi '+data[2]+' '+data[6] +'</div>'
+                    + '<div><img src="https://drive.google.com/thumbnail?id=1EOCSr1KSQ0ThPAx-DepjcqwL3WURRabg" alt=""></div><div>'
+                    + 'oleh :<br>'
+                    + '<span>'+data[0]+'</span><br>'
+                    + '<span>'+data[1]+'</span><br>'
+                    + '<span>bidang minat<br>'+data[4]+'</span><br></div><div id="cov-footer">'
+                    + 'jurusan ' +data[2]+ '<br>fakultas ' +data[5]+ '<br>' +data[6]+ '<br>'
+                    + data[7]+ '</div></div>';
+            }
+
+            function kata_pengantar(data) {
+                return '<div id="pg-kata_pengantar" class="head-count"><div id="pg-kata_pengantar-content">'
+                    + '<div class="pendahuluan-sub-title">kata pengantar'
+                    + '<img src="https://drive.google.com/thumbnail?id=1G0D919EbhGdGCsC5JN1nY0hg6ypTlkJu" alt=""></div><p>'
+                    + 'Penulis memanjatkan Segala Puji Bagi Allah SWT Tuhan semesta alam dan Shalawat serta salam selalu'
+                    + 'tercurahkan kepada Nabi Muhammad SAW, Penulis berhasil menyelesaikan Tugas Akhir dengan judul:</p>'
+                    + '<p id="pg-kata_pengantar-judul">' +data[3]+ '</p><p>'
+                    + 'Melalui kesempatan yang sangat berbahagia ini penulis menyampaikan ucapan terima kasih yang sebesar-besarnya'
+                    + 'kepada semua pihak yang telah membantu dan terlibat dalam dalam penyelesaian tugas akhir ini.</p><p>'
+                    + 'Peneliti menyadari bahwa dalam penulisan Tugas Akhir ini masih banyak kekurangan dan keterbatasan. Oleh'
+                    + 'karena itu penulis mengharapkan saran yang  membangun agar tulisan ini bermanfaat bagi perkembangan ilmu'
+                    + 'pengetahuan kedepannya.</p></div><div></div><p id="pg-kata_pengantar-info">'
+                    + '<span>' +data[9]+ ', ' +data[8]+ '</span><br><br><br><br><br>'
+                    + '<span>' +data[0]+ '</span></p></div>';
+            }
+
+            function kata_pengantar_def(data) {
+                return '<div id="pg-kata_pengantar" class="head-count"><div id="pg-kata_pengantar-content">'
+                    + '<div class="pendahuluan-sub-title">kata pengantar'
+                    + '</div><p>'
+                    + 'Penulis memanjatkan Segala Puji Bagi Tuhan yang maha esa sehingga'
+                    + ' Penulis berhasil menyelesaikan Tugas Akhir dengan judul:</p>'
+                    + '<p id="pg-kata_pengantar-judul">' +data[3]+ '</p><p>'
+                    + 'Melalui kesempatan yang sangat berbahagia ini penulis menyampaikan ucapan terima kasih yang sebesar-besarnya'
+                    + 'kepada semua pihak yang telah membantu dan terlibat dalam dalam penyelesaian tugas akhir ini.</p><p>'
+                    + 'Peneliti menyadari bahwa dalam penulisan Tugas Akhir ini masih banyak kekurangan dan keterbatasan. Oleh'
+                    + 'karena itu penulis mengharapkan saran yang  membangun agar tulisan ini bermanfaat bagi perkembangan ilmu'
+                    + 'pengetahuan kedepannya.</p></div><div></div><p id="pg-kata_pengantar-info">'
+                    + '<span>' +data[9]+ ', ' +data[8]+ '</span><br><br><br><br><br>'
+                    + '<span>' +data[0]+ '</span></p></div>';
+            }
+
+            if (type === 1) return cover(data);
+            if (type === 2) return kata_pengantar(data);
+            if (type === 3) return kata_pengantar_def(data);
+        }
+
         return construct(lex(inline(input)));
-    }
-
-    factory(type, data) {
-
-        function cover(data) {
-            return '<div id="cover" class="reset-head-count">'
-                + '<div id="cov-head">'
-                + data[3] + '<br><br>tugas akhir<br><br>'
-                + '</div><div>diajukan untuk memenuhi<br>'
-                + 'persyaratan guna meraih gelar sarjana strata i<br>'
-                + 'program studi '+data[2]+' '+data[6] +'</div>'
-                + '<div><img src="https://drive.google.com/thumbnail?id=1EOCSr1KSQ0ThPAx-DepjcqwL3WURRabg" alt=""></div><div>'
-                + 'oleh :<br>'
-                + '<span>'+data[0]+'</span><br>'
-                + '<span>'+data[1]+'</span><br>'
-                + '<span>bidang minat<br>'+data[4]+'</span><br></div><div id="cov-footer">'
-                + 'jurusan ' +data[2]+ '<br>fakultas ' +data[5]+ '<br>' +data[6]+ '<br>'
-                + data[7]+ '</div></div>';
-        }
-
-        function kata_pengantar(data) {
-            return '<div id="pg-kata_pengantar" class="head-count"><div id="pg-kata_pengantar-content">'
-                + '<div class="pendahuluan-sub-title">kata pengantar'
-                + '<img src="https://drive.google.com/thumbnail?id=1G0D919EbhGdGCsC5JN1nY0hg6ypTlkJu" alt=""></div><p>'
-                + 'Penulis memanjatkan Segala Puji Bagi Allah SWT Tuhan semesta alam dan Shalawat serta salam selalu'
-                + 'tercurahkan kepada Nabi Muhammad SAW, Penulis berhasil menyelesaikan Tugas Akhir dengan judul:</p>'
-                + '<p id="pg-kata_pengantar-judul">' +data[3]+ '</p><p>'
-                + 'Melalui kesempatan yang sangat berbahagia ini penulis menyampaikan ucapan terima kasih yang sebesar-besarnya'
-                + 'kepada semua pihak yang telah membantu dan terlibat dalam dalam penyelesaian tugas akhir ini.</p><p>'
-                + 'Peneliti menyadari bahwa dalam penulisan Tugas Akhir ini masih banyak kekurangan dan keterbatasan. Oleh'
-                + 'karena itu penulis mengharapkan saran yang  membangun agar tulisan ini bermanfaat bagi perkembangan ilmu'
-                + 'pengetahuan kedepannya.</p></div><div></div><p id="pg-kata_pengantar-info">'
-                + '<span>' +data[9]+ ', ' +data[8]+ '</span><br><br><br><br><br>'
-                + '<span>' +data[0]+ '</span></p></div>';
-        }
-
-        function kata_pengantar_def(data) {
-            return '<div id="pg-kata_pengantar" class="head-count"><div id="pg-kata_pengantar-content">'
-                + '<div class="pendahuluan-sub-title">kata pengantar'
-                + '</div><p>'
-                + 'Penulis memanjatkan Segala Puji Bagi Tuhan yang maha esa sehingga'
-                + ' Penulis berhasil menyelesaikan Tugas Akhir dengan judul:</p>'
-                + '<p id="pg-kata_pengantar-judul">' +data[3]+ '</p><p>'
-                + 'Melalui kesempatan yang sangat berbahagia ini penulis menyampaikan ucapan terima kasih yang sebesar-besarnya'
-                + 'kepada semua pihak yang telah membantu dan terlibat dalam dalam penyelesaian tugas akhir ini.</p><p>'
-                + 'Peneliti menyadari bahwa dalam penulisan Tugas Akhir ini masih banyak kekurangan dan keterbatasan. Oleh'
-                + 'karena itu penulis mengharapkan saran yang  membangun agar tulisan ini bermanfaat bagi perkembangan ilmu'
-                + 'pengetahuan kedepannya.</p></div><div></div><p id="pg-kata_pengantar-info">'
-                + '<span>' +data[9]+ ', ' +data[8]+ '</span><br><br><br><br><br>'
-                + '<span>' +data[0]+ '</span></p></div>';
-        }
-
-        if (type === 1) return cover(data);
-        if (type === 2) return kata_pengantar(data);
-        if (type === 3) return kata_pengantar_def(data);
     }
 
     update_foreign_word() {
@@ -938,13 +941,13 @@ class Skripdown {
             for_words = 'online|offline';
             trans_words = 'daring|luring';
         }
-        const foreign_word      = for_words.split('|');
-        const translate_word    = trans_words.split(',');
         this.raw_foreign        = for_words;
         this.raw_trans          = trans_words;
         this.vocabularity       = new Map();
         this.foreign_regex      = new RegExp('\b('+for_words+')\b','i');
         this.foreign_regex_inv  = new RegExp('<em>('+for_words+')<\/em>','i');
+        const foreign_word      = for_words.split('|');
+        const translate_word    = trans_words.split(',');
         for (let i = 0; i < for_words.length;i++) {
             this.vocabularity.set(foreign_word[i],translate_word[i]);
         }
