@@ -19,9 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e11be39e-f2d4-475c-839d-76f9fe8f6eac" name="Default Changelist" comment="OUT template update">
+    <list default="true" id="e11be39e-f2d4-475c-839d-76f9fe8f6eac" name="Default Changelist" comment="skripdown parser updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/print/Universitas Muhammadiyah Malang/Informatika.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/print/Universitas Muhammadiyah Malang/Informatika.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/element/lib/core/skripdown/parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/element/lib/core/skripdown/parser.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +230,7 @@
       <workItem from="1598830292607" duration="635000" />
       <workItem from="1598927552665" duration="7764000" />
       <workItem from="1598942204119" duration="9678000" />
-      <workItem from="1598966164559" duration="3371000" />
+      <workItem from="1598966164559" duration="5234000" />
     </task>
     <task id="LOCAL-00001" summary="Readme update">
       <created>1598358780919</created>
@@ -407,7 +407,21 @@
       <option name="project" value="LOCAL" />
       <updated>1598967625286</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="OUT template update">
+      <created>1598971831940</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1598971831940</updated>
+    </task>
+    <task id="LOCAL-00027" summary="skripdown parser updated">
+      <created>1598971853201</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1598971853201</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +453,8 @@
     <MESSAGE value="editor.js updated" />
     <MESSAGE value="editor.js bug fixed" />
     <MESSAGE value="OUT template update" />
-    <option name="LAST_COMMIT_MESSAGE" value="OUT template update" />
+    <MESSAGE value="skripdown parser updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="skripdown parser updated" />
   </component>
   <component name="WindowStateProjectService">
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1598173708153">
@@ -474,10 +489,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598036228737" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1598967631674">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1598971857992">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1598967631674" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1598971857992" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597945154626">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
