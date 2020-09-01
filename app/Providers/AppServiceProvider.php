@@ -15,7 +15,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['request']->server->set('HTTPS', true);
+        if (env('ENABLE_SSL') === 'TRUE') {
+            $this->app['request']->server->set('HTTPS', true);
+        }
     }
 
     /**
@@ -25,7 +27,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(UrlGenerator $url)
     {
-        $url->formatScheme('https');
+        if (env('ENABLE_SSL') === 'TRUE') {
+            $url->formatScheme('https');
+        }
         Schema::defaultStringLength(190);
     }
 }

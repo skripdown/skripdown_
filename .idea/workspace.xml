@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e11be39e-f2d4-475c-839d-76f9fe8f6eac" name="Default Changelist" comment="skripdown integration laravel" />
+    <list default="true" id="e11be39e-f2d4-475c-839d-76f9fe8f6eac" name="Default Changelist" comment="README.md updated" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -226,7 +226,7 @@
       <workItem from="1598784624721" duration="120000" />
       <workItem from="1598830292607" duration="635000" />
       <workItem from="1598927552665" duration="7764000" />
-      <workItem from="1598942204119" duration="1056000" />
+      <workItem from="1598942204119" duration="1420000" />
     </task>
     <task id="LOCAL-00001" summary="Readme update">
       <created>1598358780919</created>
@@ -305,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598943237467</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="README.md updated">
+      <created>1598943479325</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1598943479325</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +338,8 @@
     <MESSAGE value="implement parser" />
     <MESSAGE value="build parser" />
     <MESSAGE value="skripdown integration laravel" />
-    <option name="LAST_COMMIT_MESSAGE" value="skripdown integration laravel" />
+    <MESSAGE value="README.md updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="README.md updated" />
   </component>
   <component name="WindowStateProjectService">
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1598173708153">
@@ -366,10 +374,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598036228737" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1598936681874">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1598943486194">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1598936681874" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1598943486194" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597945154626">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
