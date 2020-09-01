@@ -182,27 +182,27 @@
     .dfi-sub-i::before {
         background-color : white;
         font-weight : bold;
-        content : counter(dfi-bab-idx) "." counter(dfi-sub-1) ". ";
+        content : counter(dfi-bab-idx) "." counter(dfi-sub-1) " ";
     }
     .dfi-sub-ii::before {
         background-color : white;
         font-weight : bold;
-        content : counter(dfi-bab-idx) "." counter(dfi-sub-1) "." counter(dfi-sub-2) ". ";
+        content : counter(dfi-bab-idx) "." counter(dfi-sub-1) "." counter(dfi-sub-2) " ";
     }
     .dfi-sub-iii::before {
         background-color : white;
         font-weight : bold;
-        content : counter(dfi-bab-idx) "." counter(dfi-sub-1) "." counter(dfi-sub-2) "." counter(dfi-sub-3) ". ";
+        content : counter(dfi-bab-idx) "." counter(dfi-sub-1) "." counter(dfi-sub-2) "." counter(dfi-sub-3) " ";
     }
     .dfi-sub-iv::before {
         background-color : white;
         font-weight : bold;
-        content : counter(dfi-bab-idx) "." counter(dfi-sub-1) "." counter(dfi-sub-2) "." counter(dfi-sub-3) "." counter(dfi-sub-4) ". ";
+        content : counter(dfi-bab-idx) "." counter(dfi-sub-1) "." counter(dfi-sub-2) "." counter(dfi-sub-3) "." counter(dfi-sub-4) " ";
     }
     .dfi-sub-v::before {
         background-color : white;
         font-weight : bold;
-        content : counter(dfi-bab-idx) "." counter(dfi-sub-1) "." counter(dfi-sub-2) "." counter(dfi-sub-3) "." counter(dfi-sub-4) "." counter(dfi-sub-5) ". ";
+        content : counter(dfi-bab-idx) "." counter(dfi-sub-1) "." counter(dfi-sub-2) "." counter(dfi-sub-3) "." counter(dfi-sub-4) "." counter(dfi-sub-5) " ";
     }
     .dfi-sub-vi::before {
         background-color : white;
