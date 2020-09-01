@@ -27,6 +27,11 @@ class Controller extends BaseController
         $prse = $request->parse;
         $urls = $request->url;
         $cfnt = $request->conf_font;
+        $auth = $request->author;
+        $id   = $request->id_;
+        $ttle = $request->title;
+        $abst = $request->abstract;
+        $absk = $request->abstract_key;
         $doc  = null;
 
         if ($urls == 'none') {
@@ -51,6 +56,11 @@ class Controller extends BaseController
         $doc->text          = $text;
         $doc->parse         = $prse;
         $doc->conf_font     = $cfnt;
+        $doc->author        = $auth;
+        $doc->id_           = $id;
+        $doc->title         = $ttle;
+        $doc->abstract      = $abst;
+        $doc->abstract_key  = $absk;
         $doc->save();
 
         return redirect('/editor/'.$urls);

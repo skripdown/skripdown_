@@ -15,6 +15,11 @@ class CreateDocumentsTable extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
+            $table->string('author');
+            $table->string('id_');
+            $table->string('title');
+            $table->text('abstract');
+            $table->string('abstract_key');
             $table->string('university');
             $table->string('faculty');
             $table->string('department');
