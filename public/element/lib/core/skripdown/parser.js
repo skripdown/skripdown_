@@ -3,6 +3,7 @@ class Skripdown {
     constructor(for_words, trans_words) {
         this.title      = '';
         this.author     = '';
+        this.id         = '';
         this.faculty    = '';
         this.department = '';
         this.abstract   = '';
