@@ -29,8 +29,8 @@ class Skripdown {
             $lem_pengesahan_value   = '',
             $lem_pernyataan_value   = '';
 
-        const foreign_regex = this.foreign_regex;
-        const foreign_regex_inv = this.foreign_regex_inv;
+        let foreign_regex           = this.foreign_regex;
+        let foreign_regex_inv       = this.foreign_regex_inv;
 
         function autocorrect(text) {
             let temp;
@@ -118,11 +118,13 @@ class Skripdown {
                 raw = raw.replace('*'+result[1]+'*','<em>'+result[1]+'</em>');
                 if (!this.vocabularity.has(result[1])) {
                     this.vocabularity.set(result[1],'0');
-                    this.raw_foreign        += (','+result[1]);
-                    this.raw_trans          += (',0');
+                    this.raw_foreign        += ('|'+result[1]);
+                    this.raw_trans          += ('|0');
                     this.foreign_regex      = null;
                     this.foreign_regex      = new RegExp('\b('+this.raw_foreign+')\b','i');
                     this.foreign_regex_inv  = new RegExp('<em>('+this.raw_foreign+')<\/em>','i');
+                    foreign_regex           = this.foreign_regex;
+                    foreign_regex_inv       = this.foreign_regex_inv;
                 }
             }
 
@@ -946,7 +948,7 @@ class Skripdown {
         this.foreign_regex      = new RegExp('\b('+for_words+')\b','i');
         this.foreign_regex_inv  = new RegExp('<em>('+for_words+')<\/em>','i');
         const foreign_word      = for_words.split('|');
-        const translate_word    = trans_words.split(',');
+        const translate_word    = trans_words.split('|');
         for (let i = 0; i < for_words.length;i++) {
             this.vocabularity.set(foreign_word[i],translate_word[i]);
         }
