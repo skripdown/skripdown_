@@ -1,7 +1,7 @@
 <p align="center"><img src="public/asset/app_logo.png" width="400"></p>
 
 ## About **Skripdown**
-**Skripdown** is a simple **Markdown** language design for fast end thesis writing with feature such as autoformating, 
+**Skripdown** is a simple **Markdown** language designed for fast end thesis writing with feature such as autoformating, 
 autogenerate and simplified syntax. **Skripdown** just require less than a second to parse text into **Markup** object. 
 With simple, expressive and intuitive syntax made **Skripdown** so powerfull to deal with thesis writing.
 

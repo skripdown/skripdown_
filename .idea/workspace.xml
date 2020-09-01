@@ -19,14 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e11be39e-f2d4-475c-839d-76f9fe8f6eac" name="Default Changelist" comment="skripdown integration laravel">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Skripdown.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Skripdown.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_01_044718_create_skripdowns_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_01_044718_create_skripdowns_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="e11be39e-f2d4-475c-839d-76f9fe8f6eac" name="Default Changelist" comment="skripdown integration laravel" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -233,7 +226,7 @@
       <workItem from="1598784624721" duration="120000" />
       <workItem from="1598830292607" duration="635000" />
       <workItem from="1598927552665" duration="7764000" />
-      <workItem from="1598942204119" duration="738000" />
+      <workItem from="1598942204119" duration="1056000" />
     </task>
     <task id="LOCAL-00001" summary="Readme update">
       <created>1598358780919</created>
@@ -305,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598936884430</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="skripdown integration laravel">
+      <created>1598943237467</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1598943237467</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
