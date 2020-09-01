@@ -1,10 +1,12 @@
 <?php
+/** @noinspection PhpUndefinedMethodInspection */
 /** @noinspection SpellCheckingInspection */
 /** @noinspection PhpUndefinedFieldInspection */
 
 namespace App\Http\Controllers;
 
 use App\Document;
+use App\Skripdown;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
@@ -75,5 +77,19 @@ class Controller extends BaseController
         else {
             return '404 NOT FOUND!';
         }
+    }
+
+    public function skripdownForeignWords(Request $request) {
+        $skripdown = Skripdown::find(1);
+        $skripdown->foreign_words = $request->foreign_word;
+        $skripdown->translate_words = $request->translate_word;
+        $skripdown->save();
+
+        return response()->json(
+            array(
+                'foreign_word'=>$skripdown->foreign_words,
+                'translate_word'=>$skripdown->translate_words
+            ),200
+        );
     }
 }

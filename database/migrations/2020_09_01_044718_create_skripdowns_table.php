@@ -15,8 +15,8 @@ class CreateSkripdownsTable extends Migration
     {
         Schema::create('skripdowns', function (Blueprint $table) {
             $table->id();
-            $table->string('foreign_words');
-            $table->string('translate_words');
+            $table->text('foreign_words');
+            $table->text('translate_words');
             $table->timestamps();
         });
     }
