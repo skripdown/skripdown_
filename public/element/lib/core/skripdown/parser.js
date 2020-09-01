@@ -1,16 +1,7 @@
 class Skripdown {
 
     constructor(for_words, trans_words) {
-        const foreign_word      = for_words.split('|');
-        const translate_word    = trans_words.split(',');
-        this.raw_foreign        = for_words;
-        this.raw_trans          = trans_words;
-        this.vocabularity       = new Map();
-        this.foreign_regex      = new RegExp('\b('+for_words+')\b','i');
-        this.foreign_regex_inv  = new RegExp('<em>('+for_words+')<\/em>','i');
-        for (let i = 0; i < for_words.length;i++) {
-            this.vocabularity.set(foreign_word[i],translate_word[i]);
-        }
+        this.set_foreign_word(for_words, trans_words);
     }
 
     parse(input) {
@@ -940,6 +931,19 @@ class Skripdown {
 
     update_foreign_word() {
         return [this.raw_foreign,this.raw_trans];
+    }
+
+    set_foreign_word(for_words,trans_words) {
+        const foreign_word      = for_words.split('|');
+        const translate_word    = trans_words.split(',');
+        this.raw_foreign        = for_words;
+        this.raw_trans          = trans_words;
+        this.vocabularity       = new Map();
+        this.foreign_regex      = new RegExp('\b('+for_words+')\b','i');
+        this.foreign_regex_inv  = new RegExp('<em>('+for_words+')<\/em>','i');
+        for (let i = 0; i < for_words.length;i++) {
+            this.vocabularity.set(foreign_word[i],translate_word[i]);
+        }
     }
 }
 
