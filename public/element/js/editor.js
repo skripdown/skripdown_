@@ -62,6 +62,7 @@ $(document).ready(()=>{
         $(input_author).val(auth);
         $(input_id).val(id);
         $(input_abstract).val(abst);
+        $(input_abs_key).val('no abstract key');
         $(input_title).val(ttle);
         $(input_conf_font).val($(skrip_input).data('font-editor'));
         $(form).submit();
