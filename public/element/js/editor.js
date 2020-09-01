@@ -5,6 +5,11 @@ let input_department;
 let input_university;
 let input_faculty;
 let input_conf_font;
+let input_author;
+let input_id;
+let input_abstract;
+let input_abs_key;
+let input_title;
 let skrip_input;
 let btn_font_up;
 let btn_font_down;
@@ -25,6 +30,11 @@ $(document).ready(()=>{
     input_department  = $('#department-val').get(0);
     input_university  = $('#university-val').get(0);
     input_faculty     = $('#faculty-val').get(0);
+    input_author      = $('#author-val').get(0);
+    input_id          = $('#id-val').get(0);
+    input_abstract    = $('#abstract-val').get(0);
+    input_abs_key     = $('#abstract-key-val').get(0);
+    input_title       = $('#title-val').get(0);
     input_conf_font   = $('#conf-font-val').get(0);
     skrip_input       = $('#skrip').get(0);
 
@@ -38,23 +48,21 @@ $(document).ready(()=>{
 
     $(save_btn).click(()=>{
         temp_text = $(skrip_input).html();
-        let temp;
-        if ((temp = /^ *@university *: *([\w\S ]+) *$/m.exec(temp_text)) != null)
-            university = temp[1];
-        else
-            university = 'Universitas Muhammadiyah Malang';
-        if ((temp = /^ *@faculty *: *([\w\S ]+) *$/m.exec(temp_text)) != null)
-            faculty = temp[1];
-        else
-            faculty = 'Teknik';
-        if ((temp = /^ *@department *: *([\w\S ]+) *$/m.exec(temp_text)) != null)
-            department = temp[1];
-        else
-            department = 'Informatika';
+        const dept = skrip_d.getDepartment();
+        const fclt = skrip_d.getFaculty();
+        const univ = skrip_d.getUniversity();
+        const auth = skrip_d.getAuthor();
+        const id   = skrip_d.getId();
+        const abst = skrip_d.getAbstract();
+        const ttle = skrip_d.getTitle();
         $(input_text).val(temp_text);
-        $(input_department).val(department);
-        $(input_faculty).val(faculty);
-        $(input_university).val(university);
+        $(input_department).val(dept);
+        $(input_faculty).val(fclt);
+        $(input_university).val(univ);
+        $(input_author).val(auth);
+        $(input_id).val(id);
+        $(input_abstract).val(abst);
+        $(input_title).val(ttle);
         $(input_conf_font).val($(skrip_input).data('font-editor'));
         $(form).submit();
     });

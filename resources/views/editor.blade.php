@@ -119,6 +119,7 @@
                     <form id="form" action="{{url('submit_text')}}" method="POST" enctype="multipart/form-data" hidden>
                         @csrf
                         @if ($doc != null)
+                            <input type="hidden" name="title" id="title-val" value="{{$doc->title}}">
                             <input type="hidden" name="author" id="author-val" value="{{$doc->author}}">
                             <input type="hidden" name="id" id="id-val" value="{{$doc->id}}">
                             <input type="hidden" name="abstract" id="abstract-val" value="{{$doc->abstract}}">
@@ -131,6 +132,7 @@
                             <input type="hidden" name="url" id="url-val" value="{{$doc->url}}">
                             <input type="hidden" name="conf_font" id="conf-font-val" value="{{$doc->conf_font}}">
                         @else
+                            <input type="hidden" name="title" id="title-val">
                             <input type="hidden" name="author" id="author-val">
                             <input type="hidden" name="id" id="id-val">
                             <input type="hidden" name="abstract" id="abstract-val">
