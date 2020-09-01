@@ -34,7 +34,7 @@ $(document).ready(()=>{
     save_btn          = $('#save').get(0);
     skrip_d           = new Skripdown('','');
     skripd_link       = $('meta[name=skripd_f_words]').attr('content');
-    skripd_token      = $('meta[name=skripd_token]').attrs('content');
+    skripd_token      = $('meta[name=skripd_token]').attr('content');
 
     $(save_btn).click(()=>{
         temp_text = $(skrip_input).html();
