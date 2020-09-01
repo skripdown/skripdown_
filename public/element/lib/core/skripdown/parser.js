@@ -970,30 +970,44 @@ class Skripdown {
     }
 
     getTitle() {
+        if (this.title === '' || this.title === 'untitled')
+            return 'no title';
         return this.title;
     }
 
     getAuthor() {
+        if (this.author === '' || this.author === 'noname')
+            return 'no author';
         return this.author;
     }
 
     getId() {
+        if (this.id === '' || this.id === 'noid')
+            return 'no id';
         return this.id;
     }
 
     getFaculty() {
+        if (this.faculty === '' || this.faculty === 'faculty')
+            return 'Teknik';
         return this.faculty;
     }
 
     getDepartment() {
+        if (this.department === '' || this.department === 'department')
+            return 'Informatika';
         return this.department;
     }
 
     getUniversity() {
+        if (this.university === '' || this.university === 'university')
+            return 'Universitas Muhammadiyah Malang';
         return this.university;
     }
 
     getAbstract() {
+        if (this.abstract === '')
+            return 'no abstract';
         return this.abstract;
     }
 }
