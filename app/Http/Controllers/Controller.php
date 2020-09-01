@@ -82,7 +82,7 @@ class Controller extends BaseController
     public function skripdownForeignWords(Request $request) {
 
         $skripdown = Skripdown::find(1);
-        if ($request->foreign_word !== '') {
+        if ($request->foreign_word !== 'online|offline') {
             $skripdown->foreign_words = $request->foreign_word;
             $skripdown->translate_words = $request->translate_word;
             $skripdown->save();

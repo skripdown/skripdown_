@@ -94,7 +94,6 @@ window.setInterval(()=>{
             url     : ''+skripd_link+'',
             data    : {_token:skripd_token,foreign_word:temp[0],translate_word:temp[1]},
             success : data=>{
-                console.log(data.foreign_word);
                 skrip_d.set_foreign_word(data.foreign_word,data.translate_word);
             }
         });
