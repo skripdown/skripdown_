@@ -121,7 +121,7 @@
                         @if ($doc != null)
                             <input type="hidden" name="title" id="title-val" value="{{$doc->title}}">
                             <input type="hidden" name="author" id="author-val" value="{{$doc->author}}">
-                            <input type="hidden" name="id" id="id-val" value="{{$doc->id}}">
+                            <input type="hidden" name="id_" id="id-val" value="{{$doc->id}}">
                             <input type="hidden" name="abstract" id="abstract-val" value="{{$doc->abstract}}">
                             <input type="hidden" name="abstract_key" id="abstract-key-val" value="{{$doc->abstract_key}}">
                             <input type="hidden" name="text" id="text-val" value="{{$doc->text}}">
@@ -134,7 +134,7 @@
                         @else
                             <input type="hidden" name="title" id="title-val">
                             <input type="hidden" name="author" id="author-val">
-                            <input type="hidden" name="id" id="id-val">
+                            <input type="hidden" name="id_" id="id-val">
                             <input type="hidden" name="abstract" id="abstract-val">
                             <input type="hidden" name="abstract_key" id="abstract-key-val">
                             <input type="hidden" name="text" id="text-val">
