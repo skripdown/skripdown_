@@ -19,6 +19,7 @@ class CreateDocumentsTable extends Migration
             $table->string('faculty');
             $table->string('department');
             $table->string('url');
+            $table->string('conf_font');
             $table->text('parse');
             $table->text('text');
             $table->timestamps();

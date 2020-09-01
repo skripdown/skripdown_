@@ -125,6 +125,7 @@
                             <input type="hidden" name="faculty" id="faculty-val" value="{{$doc->faculty}}">
                             <input type="hidden" name="parse" id="parse-val" value="{{$doc->parse}}">
                             <input type="hidden" name="url" id="url-val" value="{{$doc->url}}">
+                            <input type="hidden" name="conf_font" id="conf-font-val" value="{{$doc->conf_font}}">
                         @else
                             <input type="hidden" name="text" id="text-val">
                             <input type="hidden" name="university" id="university-val">
@@ -132,11 +133,24 @@
                             <input type="hidden" name="faculty" id="faculty-val">
                             <input type="hidden" name="parse" id="parse-val" value="none">
                             <input type="hidden" name="url" id="url-val" value="none">
+                            <input type="hidden" name="conf_font" id="conf-font-val" value="none">
                         @endif
                     </form>
                     <div class="row">
                         <div class="col-12 mt5 bg-white border-top" style="height: 86vh;overflow-y: auto">
-                            <div id="skrip" class="col-xl-8 col-lg-10 col-m-12 mr-auto ml-auto" data-font-editor="16" contenteditable="true" spellcheck="false" style="padding: 3vh; min-height: 80vh;font-size: 16pt">
+                            <div id="skrip" class="col-xl-8 col-lg-10 col-m-12 mr-auto ml-auto"
+                                 @if ($doc != null)
+                                    data-font-editor="{{$doc->conf_font}}"
+                                    contenteditable="true"
+                                    spellcheck="false"
+                                    style="padding: 3vh; min-height: 80vh;font-size: {{$doc->conf_font}}pt"
+                                 @else
+                                    data-font-editor="16"
+                                    contenteditable="true"
+                                    spellcheck="false"
+                                    style="padding: 3vh; min-height: 80vh;font-size: 16pt"
+                                 @endif
+                            >
                                 @if ($doc != null)
                                     {!! $doc->text !!}
                                 @else

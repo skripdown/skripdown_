@@ -4,6 +4,7 @@ let input_parse;
 let input_department;
 let input_university;
 let input_faculty;
+let input_conf_font;
 let skrip_input;
 let btn_font_up;
 let btn_font_down;
@@ -24,6 +25,7 @@ $(document).ready(()=>{
     input_department  = $('#department-val').get(0);
     input_university  = $('#university-val').get(0);
     input_faculty     = $('#faculty-val').get(0);
+    input_conf_font   = $('#conf-font-val').get(0);
     skrip_input       = $('#skrip').get(0);
 
     btn_font_up       = $('#btn-font-up').get(0);
@@ -53,6 +55,7 @@ $(document).ready(()=>{
         $(input_department).val(department);
         $(input_faculty).val(faculty);
         $(input_university).val(university);
+        $(input_conf_font).val($(skrip_input).data('font-editor'));
         $(form).submit();
     });
 
