@@ -24,6 +24,7 @@ class Controller extends BaseController
         $fact = $request->faculty;
         $prse = $request->parse;
         $urls = $request->url;
+        $cfnt = $request->conf_font;
         $doc  = null;
 
         if ($urls == 'none') {
@@ -47,6 +48,7 @@ class Controller extends BaseController
         $doc->department    = $dept;
         $doc->text          = $text;
         $doc->parse         = $prse;
+        $doc->conf_font     = $cfnt;
         $doc->save();
 
         return redirect('/editor/'.$urls);
