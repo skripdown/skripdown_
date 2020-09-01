@@ -1,7 +1,8 @@
 <style>
     body {
-        font-size : 12pt;
-        line-height : 1.75em;
+        font-size : 12.25pt;
+        line-height : 1.8em;
+        letter-spacing: 0.05em;
     }
     #pg-lembar_persetujuan {
         counter-reset : page 1;
@@ -543,6 +544,9 @@
     }
     .sub + p {
         margin-top : -0.25pt;
+    }
+    .reset-num-ls + .sub, .reset-alpha-ls + .sub{
+        margin-top: 12pt;
     }
     p + p {
         margin-top : -10pt;
