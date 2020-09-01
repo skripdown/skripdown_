@@ -1,7 +1,7 @@
 <style>
     body {
         font-size : 12pt;
-        line-height : 1.5em;
+        line-height : 1.75em;
     }
     #pg-lembar_persetujuan {
         counter-reset : page 1;
