@@ -1281,3 +1281,14 @@ class Citation {
     }
 
 }
+
+class SkripBot {
+    // skripdown bot assistance
+    // GOAL
+    // 1. melakukan text mining pada judul
+    // 2. menentukan teori yang digunakan pada bab ii
+    // 3. menentukan referensi
+    constructor() {
+
+    }
+}
