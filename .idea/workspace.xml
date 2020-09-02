@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e11be39e-f2d4-475c-839d-76f9fe8f6eac" name="Default Changelist" comment="thesis document object attribute update">
+    <list default="true" id="e11be39e-f2d4-475c-839d-76f9fe8f6eac" name="Default Changelist" comment="skripdown updated">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/element/lib/core/skripdown/parser.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/element/lib/core/skripdown/parser.js" afterDir="false" />
     </list>
@@ -230,7 +230,8 @@
       <workItem from="1598830292607" duration="635000" />
       <workItem from="1598927552665" duration="7764000" />
       <workItem from="1598942204119" duration="9678000" />
-      <workItem from="1598966164559" duration="8833000" />
+      <workItem from="1598966164559" duration="10227000" />
+      <workItem from="1598989129901" duration="1508000" />
     </task>
     <task id="LOCAL-00001" summary="Readme update">
       <created>1598358780919</created>
@@ -491,7 +492,21 @@
       <option name="project" value="LOCAL" />
       <updated>1598978096154</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="skripdown parser bug fixed">
+      <created>1598978780527</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1598978780527</updated>
+    </task>
+    <task id="LOCAL-00039" summary="skripdown updated">
+      <created>1598979050564</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1598979050564</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,7 +541,9 @@
     <MESSAGE value="skripdown parser updated" />
     <MESSAGE value="editor functionality updated" />
     <MESSAGE value="thesis document object attribute update" />
-    <option name="LAST_COMMIT_MESSAGE" value="thesis document object attribute update" />
+    <MESSAGE value="skripdown parser bug fixed" />
+    <MESSAGE value="skripdown updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="skripdown updated" />
   </component>
   <component name="WindowStateProjectService">
     <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1598173708153">
@@ -561,10 +578,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598036228737" />
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1598978101781">
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2" timestamp="1598979053530">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1598978101781" />
+    <state x="552" y="248" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1598979053530" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1597945154626">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

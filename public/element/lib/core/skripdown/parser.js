@@ -892,7 +892,7 @@ class Skripdown {
         function factory(type, data) {
 
             function cover(data) {
-                return '<div id="cover" class="reset-head-count">'
+                let res = '<div id="cover" class="reset-head-count">'
                     + '<div id="cov-head">'
                     + data[3] + '<br><br>tugas akhir<br><br>'
                     + '</div><div>diajukan untuk memenuhi<br>'
@@ -901,8 +901,16 @@ class Skripdown {
                     + '<div><img src="https://drive.google.com/thumbnail?id=1EOCSr1KSQ0ThPAx-DepjcqwL3WURRabg" alt=""></div><div>'
                     + 'oleh :<br>'
                     + '<span>'+data[0]+'</span><br>'
-                    + '<span>'+data[1]+'</span><br>'
-                    + '<span>bidang minat<br>'+data[4]+'</span><br></div><div id="cov-footer">'
+                    + '<span>'+data[1]+'</span><br>';
+
+                if (data[4] !== 'majoring')
+                    return res +
+                        + '<span>bidang minat<br>'+data[4]+'</span><br></div><div id="cov-footer">'
+                        + 'jurusan ' +data[2]+ '<br>fakultas ' +data[5]+ '<br>' +data[6]+ '<br>'
+                        + data[7]+ '</div></div>';
+
+                return res +
+                    + '</div><div id="cov-footer">'
                     + 'jurusan ' +data[2]+ '<br>fakultas ' +data[5]+ '<br>' +data[6]+ '<br>'
                     + data[7]+ '</div></div>';
             }
