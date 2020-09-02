@@ -1289,6 +1289,21 @@ class SkripBot {
     // 2. menentukan teori yang digunakan pada bab ii
     // 3. menentukan referensi
     constructor() {
+        this.title = '';
+        this.data = undefined;
+    }
 
+    assist(skripdown) {
+        let title = skripdown.getTitle();
+
+        function mining_title(title) {
+            //stoplist
+            title = title.replace(/\b(di|untuk|sebagai|pada|dengan|yang|ke)\b/gi,'');
+            title = title.split(/\W/g);
+        }
+    }
+
+    load(data) {
+        this.data = data;
     }
 }
