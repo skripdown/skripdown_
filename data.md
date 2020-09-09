@@ -8,7 +8,7 @@ Dataset for build Skripdown bot AI for chapter 2 recomendation,
 
 | **No** | **JUDUL**                                                    | **TEORI**                                                    |
 | ------ | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| 1      | clustering data mahasiswa berdasarkan asal daerah dan asal sekolah menggunakan Self Organizing Map (SOM) | Self Organizing Map (SOM)\| Data Mining, Clustering\| Python\| Kelulusan Mahasiswa |
+| 1      | clustering data mahasiswa berdasarkan asal daerah dan asal sekolah menggunakan self organizing map (som) | Self Organizing Map (SOM)\| Data Mining, Clustering\| Python\| Mahasiswa |
 | 2      | prediksi pendapatan cargo service center tangerang city menggunakan arsitektur long short term memory | Peramalan(Forecasting)\| Time Series, Uji Stasioneritas\| Deep Learning\| Long Short Term Memory |
 | 3      | analisa rekayasa ulang proses bisnis pada ud. top stiker     | Rekayasa Ulang Proses Bisnis (Business Process Reengineering)\| Analisis SWOT (Strengths, Weaknesses, Oppurtinities, Threats)\| BPMN (Business Process Model and Notation) |
 | 4      | perancangan sistem purna ambalan berbasis web pada gugus depan 09.067-09.068 | Gerakan Pramuka\| Gugus Depan 09.067-09.068\| Purna Ambalan \| Sistem Informasi \| Web \| Database Management System (DBMS) \|System Development Life Cycle (SDLC) \| Model Pengembangan Waterfall \| Unified Modeling Language (UML) \| Pengujian Sistem |
