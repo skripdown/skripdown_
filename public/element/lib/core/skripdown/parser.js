@@ -9,6 +9,8 @@ class Skripdown {
         this.university = '';
         this.abstract   = '';
         this.abs_key    = '';
+        this.text       = '';
+        this.parsed     = '';
         this.set_foreign_word(for_words, trans_words);
     }
 
@@ -961,6 +963,9 @@ class Skripdown {
         this.university = $university_value;
         this.faculty    = $faculty_value;
         this.department = $department_value;
+        this.text       = input;
+        this.parsed     = result;
+
         return result;
     }
 
@@ -1025,6 +1030,18 @@ class Skripdown {
         if (this.abstract === '')
             return 'no abstract';
         return this.abstract;
+    }
+
+    getText() {
+        if (this.text === '')
+            return 'no text';
+        return this.text;
+    }
+
+    getParsed() {
+        if (this.parsed === '')
+            return 'has no parsed text';
+        return this.parsed;
     }
 }
 

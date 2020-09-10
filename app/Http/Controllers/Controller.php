@@ -20,6 +20,16 @@ class Controller extends BaseController
     }
 
     public function submit(Request $request) {
+        $urls = $this->makeDoc($request);
+        return redirect('/editor/'.$urls);
+    }
+
+    public function submit_autosave(Request $request) {
+        $this->makeDoc($request);
+        return response()->json(array('status'=>'1'),200);
+    }
+
+    private function makeDoc($request) {
         $text = $request->text;
         $univ = $request->university;
         $dept = $request->department;
@@ -63,7 +73,7 @@ class Controller extends BaseController
         $doc->abstract_key  = $absk;
         $doc->save();
 
-        return redirect('/editor/'.$urls);
+        return $urls;
     }
 
     public function openDoc($url) {

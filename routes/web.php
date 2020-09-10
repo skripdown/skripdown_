@@ -20,4 +20,5 @@ Route::get('/editor', 'Controller@openEditor');
 Route::get('/editor/{url}', 'Controller@openDoc');
 Route::get('/parse/{url}', 'Controller@parseDoc');
 Route::post('submit_text','Controller@submit');
+Route::post('submit_autosave','Controller@submit_autosave');
 Route::post('post_foreign_words','Controller@skripdownForeignWords');

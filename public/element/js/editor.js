@@ -9,6 +9,7 @@ let input_author;
 let input_id;
 let input_abstract;
 let input_abs_key;
+let input_url;
 let input_title;
 let skrip_input;
 let btn_font_up;
@@ -18,7 +19,12 @@ let btn_frame;
 let save_btn;
 let skrip_d;
 let skripd_link;
+let skripd_autosave;
 let skripd_token;
+
+let conn_status;
+let temp_conn_status;
+let conn_bool;
 
 let university,faculty,department;
 let temp_text;
@@ -36,6 +42,7 @@ $(document).ready(()=>{
     input_abstract    = $('#abstract-val').get(0);
     input_abs_key     = $('#abstract-key-val').get(0);
     input_title       = $('#title-val').get(0);
+    input_url         = $('#url-val').get(0);
     input_conf_font   = $('#conf-font-val').get(0);
     skrip_input       = $('#skrip').get(0);
 
@@ -44,10 +51,16 @@ $(document).ready(()=>{
 
     btn_frame         = $('#btn-frame').get(0);
 
+    conn_status       = $('#connection-status').get(0);
+    conn_bool         = false;
+
     save_btn          = $('#save').get(0);
     skrip_d           = new Skripdown('','');
     skripd_link       = $('meta[name=skripd_f_words]').attr('content');
+    skripd_autosave   = $('meta[name=skripd_autosave]').attr('content');
     skripd_token      = $('meta[name=skripd_token]').attr('content');
+
+    temp_conn_status  = '';
 
     $(save_btn).click(()=>{
         temp_text = $(skrip_input).html();
@@ -89,11 +102,48 @@ $(document).ready(()=>{
         }
     });
 
+    $(skrip_input).keydown(e=>{
+        if ($(input_url).val() !== 'none') {
+            const code = e.keyCode;
+            if (code !== 37 && code !== 38 && code !== 39 && code !== 40) {
+                if ($(conn_status).html() !== '<span class="text-info">Mengetik...</span>')
+                    $(conn_status).html('<span class="text-info">Mengetik...</span>');
+            }
+        }
+    });
+
     $(skrip_input).keyup(e=>{
+        console.log($(input_url).val());
         const code = e.keyCode;
         if (code !== 37 && code !== 38 && code !== 39 && code !== 40) {
-            $(input_text).val(skrip_input.innerHTML);
-            $(input_parse).val(skrip_d.parse(skrip_input.innerText+'\n'));
+            if ($(input_url).val() !== 'none') {
+                $(input_text).val(skrip_input.innerHTML);
+                $(input_parse).val(skrip_d.parse(skrip_input.innerText+'\n'));
+                setTimeout(()=>{
+                    if ($(conn_status).html() !== '<span class="text-info">Mengetik...</span>'
+                        && $(conn_status).html() !== '<span class="text-info">Menyimpan...</span>')
+                        $(conn_status).html('<span class="text-info">Menyimpan...</span>');
+                    $.ajax({
+                        type    : 'POST',
+                        url     : ''+skripd_autosave+'',
+                        data    : {
+                            _token       : skripd_token,
+                            title        : skrip_d.getTitle(),
+                            author       : skrip_d.getAuthor(),
+                            id_          : skrip_d.getId(),
+                            abstract     : skrip_d.getAbstract(),
+                            abstract_key : 'none',
+                            text         : $(skrip_input).html(),
+                            university   : skrip_d.getUniversity(),
+                            department   : skrip_d.getDepartment(),
+                            faculty      : skrip_d.getFaculty(),
+                            parse        : skrip_d.getParsed(),
+                            url          : $(input_url).val(),
+                            conf_font    : $(input_conf_font).val()
+                        }
+                    });
+                },500);
+            }
         }
     });
 
@@ -156,6 +206,18 @@ window.setInterval(()=>{
             data    : {_token:skripd_token,foreign_word:temp[0],translate_word:temp[1]},
             success : data=>{
                 skrip_d.set_foreign_word(data.foreign_word,data.translate_word);
+                temp_conn_status = '';
+                $(conn_status).html(temp_conn_status);
+                $(skrip_input).removeClass('muted');
+                $(skrip_input).attr('contenteditable','true');
+                conn_bool = true;
+            },
+            error: ()=>{
+                temp_conn_status = '<span class="bg-danger text-white p-1 rounded">Tidak Terhubung !</span>';
+                $(skrip_input).addClass('muted');
+                $(skrip_input).attr('contenteditable','false');
+                $(conn_status).html(temp_conn_status);
+                conn_bool = false;
             }
         });
 },1000);

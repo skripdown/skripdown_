@@ -5,6 +5,7 @@
         <meta name="viewport" content="{{env('APP_VIEWPORT')}}">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="skripd_f_words" content="{{url('post_foreign_words')}}">
+        <meta name="skripd_autosave" content="{{url('submit_autosave')}}">
         <meta name="skripd_token" content="{{csrf_token()}}">
         <link rel="icon" type="image/png" sizes="{{env('ICON_SIZE')}}" href="{{asset(env('ICON_PATH'))}}">
         <link rel="stylesheet" href="{{asset(env('LIB_PATH').'extra/c3/c3.min.css')}}">
@@ -15,6 +16,11 @@
         <link rel="stylesheet" href="{{asset(env('CSS_PATH').'style.min.css')}}">
         <link rel="stylesheet" href="{{asset(env('CSS_PATH').'added.css')}}">
         <link rel="stylesheet" href="{{asset(env('LIB_PATH').'core/skripdown/preview-style.css')}}">
+        <style>
+            .muted {
+                opacity: 0.3;
+            }
+        </style>
         <script src="{{asset(env('LIB_PATH').'extra/html5shiv/html5shiv.js')}}"></script>
         <script src="{{asset(env('LIB_PATH').'extra/respond/respond.js')}}"></script>
     </head>
@@ -72,7 +78,12 @@
                     <div class="navbar-nav">
                         <div class="btn-list">
                             <div class="btn-group" role="group">
-                                <a id="save" type="button" class="btn btn-lg btn-success" style="color: white">simpan</a>
+                                @if ($doc != null)
+                                    <div class="mb-2" id="connection-status"><span>inisialisasi...</span></div>
+                                @else
+                                    <div class="mb-2" id="connection-status"><span>inisialisasi...</span></div>
+                                    <a id="save" type="button" class="btn btn-lg btn-success" style="color: white">simpan</a>
+                                @endif
                             </div>
                         </div>
                     </div>
