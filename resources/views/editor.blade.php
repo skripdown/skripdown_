@@ -20,6 +20,24 @@
             .muted {
                 opacity: 0.3;
             }
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+            ::-webkit-scrollbar-button {
+                width: 8px;
+                height:5px;
+            }
+            ::-webkit-scrollbar-track {
+                background:white;
+            }
+            ::-webkit-scrollbar-thumb {
+                background:darkgray;
+                border: thin solid gray;
+                border-radius:10px;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background:#7d7d7d;
+            }
         </style>
         <script src="{{asset(env('LIB_PATH').'extra/html5shiv/html5shiv.js')}}"></script>
         <script src="{{asset(env('LIB_PATH').'extra/respond/respond.js')}}"></script>
@@ -116,6 +134,14 @@
                                     <i data-feather="zoom-out" class="svg-icon mr-2 ml-1"></i>
                                     Perkecil
                                 </a>
+                                <a href="javascript:void(0)" id="btn-display-live" class="dropdown-item">
+                                    <i data-feather="credit-card" class="svg-icon mr-2 ml-1"></i>
+                                    Mode Live
+                                </a>
+                                <a href="javascript:void(0)" id="btn-display-code" class="dropdown-item d-none">
+                                    <i data-feather="code" class="svg-icon mr-2 ml-1"></i>
+                                    Mode Kode
+                                </a>
                                 <a href="javascript:void(0)" id="btn-frame" class="dropdown-item">
                                     <i data-feather="hash" class="svg-icon mr-2 ml-1"></i>
                                     Kerangka
@@ -162,31 +188,40 @@
                         @endif
                     </form>
                     <div class="row">
-                        <div class="col-12 mt5 bg-white border-top" style="height: 86vh;overflow-y: auto">
-                            <div id="skrip" class="col-xl-8 col-lg-10 col-m-12 mr-auto ml-auto"
-                                 @if ($doc != null)
-                                    data-font-editor="{{$doc->conf_font}}"
-                                    contenteditable="true"
-                                    spellcheck="false"
-                                    style="padding: 3vh; min-height: 80vh;font-size: {{$doc->conf_font}}pt"
-                                 @else
-                                    data-font-editor="16"
-                                    contenteditable="true"
-                                    spellcheck="false"
-                                    style="padding: 3vh; min-height: 80vh;font-size: 16pt"
-                                 @endif
-                            >
-                                @if ($doc != null)
-                                    {!! $doc->text !!}
-                                @else
-                                    <div>//start writing now. 😉</div>
-                                    <div>//SKRIPDOWN : fast end thesis writing</div>
-                                    <div>//this is a comment</div>
-                                    <div><br></div>
-                                    <div>@title : </div>
-                                    <div>@author : </div>
-                                    <div>@id : </div>
-                                @endif
+                        <div class="col-12">
+                            <div class="row mt5 bg-white border-top" style="height: 86.5vh;">
+                                <div id="panel-1" class="col-xl-12 col-lg-12 col-m-12 mr-auto ml-auto" style="height: 86.5vh; overflow-y: auto">
+                                    <div id="skrip" class="container pl-5 pr-5"
+                                         @if ($doc != null)
+                                         data-font-editor="{{$doc->conf_font}}"
+                                         contenteditable="true"
+                                         spellcheck="false"
+                                         style="padding: 3vh; min-height: 80vh;font-size: {{$doc->conf_font}}pt"
+                                         @else
+                                         data-font-editor="16"
+                                         contenteditable="true"
+                                         spellcheck="false"
+                                         style="padding: 3vh; min-height: 80vh;font-size: 16pt;"
+                                        @endif
+                                    >
+                                        @if ($doc != null)
+                                            {!! $doc->text !!}
+                                        @else
+                                            <div>//start writing now. 😉</div>
+                                            <div>//SKRIPDOWN : fast end thesis writing</div>
+                                            <div>//this is a comment</div>
+                                            <div><br></div>
+                                            <div>@title : </div>
+                                            <div>@author : </div>
+                                            <div>@id : </div>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div id="panel-2" class="d-none col-6"  style="overflow-y: auto; border-left: solid 2px #eee;height: 86.5vh;">
+                                    <div id="preview-skrip">
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12 mt5 bg-light border-top d-flex justify-content-between" style="height: 5vh">

@@ -12,9 +12,14 @@ let input_abs_key;
 let input_url;
 let input_title;
 let skrip_input;
+let preview_output;
 let btn_font_up;
 let btn_font_down;
 let btn_frame;
+let btn_live;
+let btn_code;
+let code_panel;
+let preview_panel;
 
 let save_btn;
 let skrip_d;
@@ -45,9 +50,15 @@ $(document).ready(()=>{
     input_url         = $('#url-val').get(0);
     input_conf_font   = $('#conf-font-val').get(0);
     skrip_input       = $('#skrip').get(0);
+    preview_output    = $('#preview-skrip').get(0);
+
+    code_panel        = $('#panel-1').get(0);
+    preview_panel     = $('#panel-2').get(0);
 
     btn_font_up       = $('#btn-font-up').get(0);
     btn_font_down     = $('#btn-font-down').get(0);
+    btn_live          = $('#btn-display-live').get(0);
+    btn_code          = $('#btn-display-code').get(0);
 
     btn_frame         = $('#btn-frame').get(0);
 
@@ -110,6 +121,30 @@ $(document).ready(()=>{
                     $(conn_status).html('<span class="text-info">Mengetik...</span>');
             }
         }
+    });
+
+    $(btn_live).click(()=>{
+        $(btn_live).addClass('d-none');
+        $(btn_code).removeClass('d-none');
+        $(code_panel).removeClass('col-xl-12');
+        $(code_panel).removeClass('col-lg-12');
+        $(code_panel).removeClass('col-m-12');
+        $(code_panel).removeClass('mr-auto');
+        $(code_panel).removeClass('ml-auto');
+        $(code_panel).addClass('col-6');
+        $(preview_panel).removeClass('d-none');
+    });
+
+    $(btn_code).click(()=>{
+        $(btn_code).addClass('d-none');
+        $(btn_live).removeClass('d-none');
+        $(code_panel).addClass('col-xl-12');
+        $(code_panel).addClass('col-lg-12');
+        $(code_panel).addClass('col-m-12');
+        $(code_panel).addClass('mr-auto');
+        $(code_panel).addClass('ml-auto');
+        $(code_panel).removeClass('col-6');
+        $(preview_panel).addClass('d-none');
     });
 
     $(skrip_input).keyup(e=>{
