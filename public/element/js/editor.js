@@ -18,8 +18,11 @@ let btn_font_down;
 let btn_frame;
 let btn_live;
 let btn_code;
+let btn_disp_code;
+let btn_disp_rendered;
 let code_panel;
 let preview_panel;
+let preview_code;
 
 let save_btn;
 let skrip_d;
@@ -32,7 +35,6 @@ let temp_conn_status;
 let conn_bool;
 
 let university,faculty,department;
-let temp_text;
 
 $(document).ready(()=>{
 
@@ -51,6 +53,7 @@ $(document).ready(()=>{
     input_conf_font   = $('#conf-font-val').get(0);
     skrip_input       = $('#skrip').get(0);
     preview_output    = $('#preview-skrip').get(0);
+    preview_code      = $('#preview-code').get(0);
 
     code_panel        = $('#panel-1').get(0);
     preview_panel     = $('#panel-2').get(0);
@@ -59,6 +62,8 @@ $(document).ready(()=>{
     btn_font_down     = $('#btn-font-down').get(0);
     btn_live          = $('#btn-display-live').get(0);
     btn_code          = $('#btn-display-code').get(0);
+    btn_disp_code     = $('#display-code').get(0);
+    btn_disp_rendered = $('#display-rendered').get(0);
 
     btn_frame         = $('#btn-frame').get(0);
 
@@ -74,15 +79,15 @@ $(document).ready(()=>{
     temp_conn_status  = '';
 
     $(save_btn).click(()=>{
-        temp_text = $(skrip_input).html();
-        const dept = skrip_d.getDepartment();
-        const fclt = skrip_d.getFaculty();
-        const univ = skrip_d.getUniversity();
-        const auth = skrip_d.getAuthor();
-        const id   = skrip_d.getId();
-        const abst = skrip_d.getAbstract();
-        const ttle = skrip_d.getTitle();
-        $(input_text).val(temp_text);
+        const _text = $(skrip_input).html();
+        const dept  = skrip_d.getDepartment();
+        const fclt  = skrip_d.getFaculty();
+        const univ  = skrip_d.getUniversity();
+        const auth  = skrip_d.getAuthor();
+        const id    = skrip_d.getId();
+        const abst  = skrip_d.getAbstract();
+        const ttle  = skrip_d.getTitle();
+        $(input_text).val(_text);
         $(input_department).val(dept);
         $(input_faculty).val(fclt);
         $(input_university).val(univ);
@@ -133,6 +138,8 @@ $(document).ready(()=>{
         $(code_panel).removeClass('ml-auto');
         $(code_panel).addClass('col-6');
         $(preview_panel).removeClass('d-none');
+        $(btn_disp_rendered).addClass('d-none');
+        $(btn_disp_code).removeClass('d-none');
     });
 
     $(btn_code).click(()=>{
@@ -145,15 +152,33 @@ $(document).ready(()=>{
         $(code_panel).addClass('ml-auto');
         $(code_panel).removeClass('col-6');
         $(preview_panel).addClass('d-none');
+        $(btn_disp_rendered).addClass('d-none');
+        $(btn_disp_code).addClass('d-none');
+    });
+
+    $(btn_disp_code).click(()=>{
+        $(btn_disp_code).addClass('d-none');
+        $(btn_disp_rendered).removeClass('d-none');
+        $(preview_output).addClass('d-none');
+        $(preview_code).removeClass('d-none');
+    });
+
+    $(btn_disp_rendered).click(()=>{
+        $(btn_disp_rendered).addClass('d-none');
+        $(btn_disp_code).removeClass('d-none');
+        $(preview_code).addClass('d-none');
+        $(preview_output).removeClass('d-none');
     });
 
     $(skrip_input).keyup(e=>{
-        console.log($(input_url).val());
         const code = e.keyCode;
         if (code !== 37 && code !== 38 && code !== 39 && code !== 40) {
             if ($(input_url).val() !== 'none') {
+                const for_parse = skrip_d.parse(skrip_input.innerText+'\n');
                 $(input_text).val(skrip_input.innerHTML);
-                $(input_parse).val(skrip_d.parse(skrip_input.innerText+'\n'));
+                $(input_parse).val(for_parse);
+                $(preview_output).html(for_parse);
+                $(preview_code).text(for_parse);
                 setTimeout(()=>{
                     if ($(conn_status).html() !== '<span class="text-info">Mengetik...</span>'
                         && $(conn_status).html() !== '<span class="text-info">Menyimpan...</span>')

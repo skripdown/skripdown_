@@ -106,11 +106,29 @@
                         </div>
                     </div>
                     <ul class="navbar-nav float-right" >
+                        <li class="nav-item">
+                            <a id="display-code" href="javascript:void(0)" class="nav-link d-none">
+                            <span class="d-none d-lg-inline-block">
+                                    <span class="text-dark">
+                                        <i data-feather="code" class="svg-icon">code</i>
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="display-rendered" href="javascript:void(0)" class="nav-link d-none">
+                            <span class="d-none d-lg-inline-block">
+                                    <span class="text-dark">
+                                        <i data-feather="file-text" class="svg-icon">rendered</i>
+                                    </span>
+                                </span>
+                            </a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a href="javascript:void(0)" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
-                            <span class="ml-2 d-none d-lg-inline-block">
+                            <span class="d-none d-lg-inline-block">
                                     <span class="text-dark">
-                                        <i data-feather="settings" class="svg-icon mr-2 ml-1">settings</i>
+                                        <i data-feather="settings" class="svg-icon mr-2">settings</i>
                                     </span>
                                 </span>
                             </a>
@@ -221,6 +239,9 @@
                                     <div id="preview-skrip">
 
                                     </div>
+                                    <div id="preview-code" class="d-none" style="font-family: 'Courier New',serif">
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -229,7 +250,7 @@
 
                             </div>
                             <div class="d-flex align-items-center font-20 mr-3 text-black-50">
-                                word count : <span>0</span>
+
                             </div>
                         </div>
                     </div>
